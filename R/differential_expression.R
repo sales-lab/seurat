@@ -2047,6 +2047,7 @@ PerformDE <- function(
 #' )
 #'
 PrepSCTFindMarkers <- function(object, assay = "SCT", verbose = TRUE) {
+  warning("This is the PREPSCT version.")
   if (length(x = levels(x = object[[assay]])) == 1) {
     if (verbose) {
       message("Only one SCT model is stored - skipping recalculating corrected counts")
@@ -2096,13 +2097,6 @@ PrepSCTFindMarkers <- function(object, assay = "SCT", verbose = TRUE) {
     )
   }
   raw_umi <- GetAssayData(object = object, assay = umi.assay, slot = "counts")
-  corrected_counts <- Matrix(
-    nrow = nrow(x = raw_umi),
-    ncol = ncol(x = raw_umi),
-    data = 0,
-    dimnames = dimnames(x = raw_umi),
-    sparse = TRUE
-  )
   cell_attr <- SCTResults(object = object[[assay]], slot = "cell.attributes")
   model_pars_fit <- lapply(
     X = SCTResults(object = object[[assay]], slot = "feature.attributes"),
@@ -2113,8 +2107,8 @@ PrepSCTFindMarkers <- function(object, assay = "SCT", verbose = TRUE) {
   set_median_umi <- rep(min_median_umi, length(levels(x = object[[assay]])))
   names(set_median_umi) <- levels(x = object[[assay]])
   set_median_umi <- as.list(set_median_umi)
-  # correct counts
-  for (model_name in levels(x = object[[assay]])) {
+
+  umi_lst <- lapply(levels(object[[assay]]), function(model_name) {
     model_genes <- rownames(x = model_pars_fit[[model_name]])
     x <- list(
       model_str = model_str[[model_name]],
@@ -2124,15 +2118,29 @@ PrepSCTFindMarkers <- function(object, assay = "SCT", verbose = TRUE) {
     )
     cells <- rownames(x = cell_attr[[model_name]])
     umi <- raw_umi[model_genes, cells]
+    correct_counts(x = x, umi = umi, verbosity = 0,
+                scale_factor = min_median_umi)
+  })
 
-    umi_corrected <- correct_counts(
-      x = x,
-      umi = umi,
-      verbosity = 0,
-      scale_factor = min_median_umi
-    )
-    corrected_counts[rownames(umi_corrected), colnames(umi_corrected)] <- umi_corrected
-  }
+  corrected_counts <- RowMergeSparseMatrices(umi_lst[[1]], umi_lst[-1])
+
+  missing <- setdiff(rownames(raw_umi), rownames(corrected_counts))
+  missing_mat <- Matrix(data = 0, nrow = length(missing),
+                        ncol = ncol(corrected_counts),
+                        dimnames = list(missing, colnames(corrected_counts)),
+                        sparse = TRUE)
+  corrected_counts <- rbind(corrected_counts, missing_mat)
+
+  stopifnot(identical(
+    sort(rownames(raw_umi)),
+    sort(rownames(corrected_counts))
+  ))
+
+  stopifnot(identical(
+    sort(colnames(raw_umi)),
+    sort(colnames(corrected_counts))
+  ))
+
   corrected_data <- log1p(corrected_counts)
   suppressWarnings({object <- SetAssayData(object = object,
                                            assay = assay,
