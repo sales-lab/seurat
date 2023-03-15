@@ -9,7 +9,7 @@ NULL
 
 globalVariables(
   names = c('fov', 'cell_ID', 'qv'),
-  package = 'Seurat',
+  package = 'SeuratSales',
   add = TRUE
 )
 #' Calculate the Barcode Distribution Inflection

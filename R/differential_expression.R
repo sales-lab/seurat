@@ -8,7 +8,7 @@ NULL
 
 globalVariables(
   names = c('myAUC', 'p_val', 'avg_logFC'),
-  package = 'Seurat',
+  package = 'SeuratSales',
   add = TRUE
 )
 #' Gene expression markers for all identity classes

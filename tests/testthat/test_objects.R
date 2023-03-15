@@ -351,7 +351,7 @@ test_that("as.SingleCellExperiment works", {
     mat <- matrix(1:100, ncol = 10)
     colnames(mat) <- LETTERS[1:10]
     rownames(mat) <- LETTERS[1:10]
-    seuratObj <- Seurat::CreateSeuratObject(mat)
+    seuratObj <- SeuratSales::CreateSeuratObject(mat)
     sce <- as.SingleCellExperiment(seuratObj)
 
     expect_equal(ncol(sce), 10)
@@ -359,7 +359,7 @@ test_that("as.SingleCellExperiment works", {
     # expect_equal(length(SingleCellExperiment::altExps(sce)), 0)
     # expect_equal(SingleCellExperiment::mainExpName(sce), 'RNA')
 
-    seuratObj <- Seurat::CreateSeuratObject(mat)
+    seuratObj <- SeuratSales::CreateSeuratObject(mat)
     seuratObj[['ADT']] <- CreateAssayObject(mat)
     sce <- as.SingleCellExperiment(seuratObj)
     expect_equal(ncol(sce), 10)

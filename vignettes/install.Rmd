@@ -54,7 +54,7 @@ Old versions of Seurat, from Seurat v2.0.1 and up, are hosted in CRAN's archive.
 # Install the remotes package 
 install.packages('remotes')
 # Replace '2.3.0' with your desired version
-remotes::install_version(package = 'Seurat', version = package_version('2.3.0'))
+remotes::install_version(package = 'SeuratSales', version = package_version('2.3.0'))
 library(Seurat)
 ```
 

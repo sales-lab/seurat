@@ -1,6 +1,6 @@
 set.seed(42)
 
-pbmc.file <- system.file('extdata', 'pbmc_raw.txt', package = 'Seurat')
+pbmc.file <- system.file('extdata', 'pbmc_raw.txt', package = 'SeuratSales')
 pbmc.test <- as.sparse(x = as.matrix(read.table(pbmc.file, sep = "\t", row.names = 1)))
 
 meta.data <- data.frame(

@@ -959,7 +959,7 @@ DimPlot <- function(
 #' @param by.col If splitting by a factor, plot the splits per column with the features as rows; ignored if \code{blend = TRUE}
 #' @param sort.cell Redundant with \code{order}. This argument is being
 #' deprecated. Please use \code{order} instead.
-#' @param interactive Launch an interactive \code{\link[Seurat:IFeaturePlot]{FeaturePlot}}
+#' @param interactive Launch an interactive \code{\link[SeuratSales:IFeaturePlot]{FeaturePlot}}
 #' @param combine Combine plots into a single \code{\link[patchwork]{patchwork}ed}
 #' ggplot object. If \code{FALSE}, return a list of ggplot objects
 #'
@@ -5369,7 +5369,7 @@ DiscretePalette <- function(n, palette = NULL, shuffle = FALSE) {
 FeatureLocator <- function(plot, ...) {
   .Defunct(
     new = 'CellSelector',
-    package = 'Seurat',
+    package = 'SeuratSales',
     msg = "'FeatureLocator' has been replaced by 'CellSelector'"
   )
 }
@@ -7762,7 +7762,7 @@ ShinyBrush <- function(plot.data, brush, outputs, inverts = character(length = 0
   return(selected)
 }
 
-globalVariables(names = '..density..', package = 'Seurat')
+globalVariables(names = '..density..', package = 'SeuratSales')
 #' A single correlation plot
 #'
 #' @param data A data frame with two columns to be plotted

@@ -2,122 +2,122 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 RunModularityClusteringCpp <- function(SNN, modularityFunction, resolution, algorithm, nRandomStarts, nIterations, randomSeed, printOutput, edgefilename) {
-    .Call('_Seurat_RunModularityClusteringCpp', PACKAGE = 'Seurat', SNN, modularityFunction, resolution, algorithm, nRandomStarts, nIterations, randomSeed, printOutput, edgefilename)
+    .Call('_SeuratSales_RunModularityClusteringCpp', PACKAGE = 'SeuratSales', SNN, modularityFunction, resolution, algorithm, nRandomStarts, nIterations, randomSeed, printOutput, edgefilename)
 }
 
 RunUMISampling <- function(data, sample_val, upsample = FALSE, display_progress = TRUE) {
-    .Call('_Seurat_RunUMISampling', PACKAGE = 'Seurat', data, sample_val, upsample, display_progress)
+    .Call('_SeuratSales_RunUMISampling', PACKAGE = 'SeuratSales', data, sample_val, upsample, display_progress)
 }
 
 RunUMISamplingPerCell <- function(data, sample_val, upsample = FALSE, display_progress = TRUE) {
-    .Call('_Seurat_RunUMISamplingPerCell', PACKAGE = 'Seurat', data, sample_val, upsample, display_progress)
+    .Call('_SeuratSales_RunUMISamplingPerCell', PACKAGE = 'SeuratSales', data, sample_val, upsample, display_progress)
 }
 
 RowMergeMatrices <- function(mat1, mat2, mat1_rownames, mat2_rownames, all_rownames) {
-    .Call('_Seurat_RowMergeMatrices', PACKAGE = 'Seurat', mat1, mat2, mat1_rownames, mat2_rownames, all_rownames)
+    .Call('_SeuratSales_RowMergeMatrices', PACKAGE = 'SeuratSales', mat1, mat2, mat1_rownames, mat2_rownames, all_rownames)
 }
 
 LogNorm <- function(data, scale_factor, display_progress = TRUE) {
-    .Call('_Seurat_LogNorm', PACKAGE = 'Seurat', data, scale_factor, display_progress)
+    .Call('_SeuratSales_LogNorm', PACKAGE = 'SeuratSales', data, scale_factor, display_progress)
 }
 
 Standardize <- function(mat, display_progress = TRUE) {
-    .Call('_Seurat_Standardize', PACKAGE = 'Seurat', mat, display_progress)
+    .Call('_SeuratSales_Standardize', PACKAGE = 'SeuratSales', mat, display_progress)
 }
 
 FastSparseRowScale <- function(mat, scale = TRUE, center = TRUE, scale_max = 10, display_progress = TRUE) {
-    .Call('_Seurat_FastSparseRowScale', PACKAGE = 'Seurat', mat, scale, center, scale_max, display_progress)
+    .Call('_SeuratSales_FastSparseRowScale', PACKAGE = 'SeuratSales', mat, scale, center, scale_max, display_progress)
 }
 
 FastSparseRowScaleWithKnownStats <- function(mat, mu, sigma, scale = TRUE, center = TRUE, scale_max = 10, display_progress = TRUE) {
-    .Call('_Seurat_FastSparseRowScaleWithKnownStats', PACKAGE = 'Seurat', mat, mu, sigma, scale, center, scale_max, display_progress)
+    .Call('_SeuratSales_FastSparseRowScaleWithKnownStats', PACKAGE = 'SeuratSales', mat, mu, sigma, scale, center, scale_max, display_progress)
 }
 
 FastCov <- function(mat, center = TRUE) {
-    .Call('_Seurat_FastCov', PACKAGE = 'Seurat', mat, center)
+    .Call('_SeuratSales_FastCov', PACKAGE = 'SeuratSales', mat, center)
 }
 
 FastCovMats <- function(mat1, mat2, center = TRUE) {
-    .Call('_Seurat_FastCovMats', PACKAGE = 'Seurat', mat1, mat2, center)
+    .Call('_SeuratSales_FastCovMats', PACKAGE = 'SeuratSales', mat1, mat2, center)
 }
 
 FastRBind <- function(mat1, mat2) {
-    .Call('_Seurat_FastRBind', PACKAGE = 'Seurat', mat1, mat2)
+    .Call('_SeuratSales_FastRBind', PACKAGE = 'SeuratSales', mat1, mat2)
 }
 
 FastExpMean <- function(mat, display_progress) {
-    .Call('_Seurat_FastExpMean', PACKAGE = 'Seurat', mat, display_progress)
+    .Call('_SeuratSales_FastExpMean', PACKAGE = 'SeuratSales', mat, display_progress)
 }
 
 SparseRowVar2 <- function(mat, mu, display_progress) {
-    .Call('_Seurat_SparseRowVar2', PACKAGE = 'Seurat', mat, mu, display_progress)
+    .Call('_SeuratSales_SparseRowVar2', PACKAGE = 'SeuratSales', mat, mu, display_progress)
 }
 
 SparseRowVarStd <- function(mat, mu, sd, vmax, display_progress) {
-    .Call('_Seurat_SparseRowVarStd', PACKAGE = 'Seurat', mat, mu, sd, vmax, display_progress)
+    .Call('_SeuratSales_SparseRowVarStd', PACKAGE = 'SeuratSales', mat, mu, sd, vmax, display_progress)
 }
 
 FastLogVMR <- function(mat, display_progress) {
-    .Call('_Seurat_FastLogVMR', PACKAGE = 'Seurat', mat, display_progress)
+    .Call('_SeuratSales_FastLogVMR', PACKAGE = 'SeuratSales', mat, display_progress)
 }
 
 RowVar <- function(x) {
-    .Call('_Seurat_RowVar', PACKAGE = 'Seurat', x)
+    .Call('_SeuratSales_RowVar', PACKAGE = 'SeuratSales', x)
 }
 
 SparseRowVar <- function(mat, display_progress) {
-    .Call('_Seurat_SparseRowVar', PACKAGE = 'Seurat', mat, display_progress)
+    .Call('_SeuratSales_SparseRowVar', PACKAGE = 'SeuratSales', mat, display_progress)
 }
 
 ReplaceColsC <- function(mat, col_idx, replacement) {
-    .Call('_Seurat_ReplaceColsC', PACKAGE = 'Seurat', mat, col_idx, replacement)
+    .Call('_SeuratSales_ReplaceColsC', PACKAGE = 'SeuratSales', mat, col_idx, replacement)
 }
 
 GraphToNeighborHelper <- function(mat) {
-    .Call('_Seurat_GraphToNeighborHelper', PACKAGE = 'Seurat', mat)
+    .Call('_SeuratSales_GraphToNeighborHelper', PACKAGE = 'SeuratSales', mat)
 }
 
 fast_dist <- function(x, y, n) {
-    .Call('_Seurat_fast_dist', PACKAGE = 'Seurat', x, y, n)
+    .Call('_SeuratSales_fast_dist', PACKAGE = 'SeuratSales', x, y, n)
 }
 
 FindWeightsC <- function(cells2, distances, anchor_cells2, integration_matrix_rownames, cell_index, anchor_score, min_dist, sd, display_progress) {
-    .Call('_Seurat_FindWeightsC', PACKAGE = 'Seurat', cells2, distances, anchor_cells2, integration_matrix_rownames, cell_index, anchor_score, min_dist, sd, display_progress)
+    .Call('_SeuratSales_FindWeightsC', PACKAGE = 'SeuratSales', cells2, distances, anchor_cells2, integration_matrix_rownames, cell_index, anchor_score, min_dist, sd, display_progress)
 }
 
 IntegrateDataC <- function(integration_matrix, weights, expression_cells2) {
-    .Call('_Seurat_IntegrateDataC', PACKAGE = 'Seurat', integration_matrix, weights, expression_cells2)
+    .Call('_SeuratSales_IntegrateDataC', PACKAGE = 'SeuratSales', integration_matrix, weights, expression_cells2)
 }
 
 ScoreHelper <- function(snn, query_pca, query_dists, corrected_nns, k_snn, subtract_first_nn, display_progress) {
-    .Call('_Seurat_ScoreHelper', PACKAGE = 'Seurat', snn, query_pca, query_dists, corrected_nns, k_snn, subtract_first_nn, display_progress)
+    .Call('_SeuratSales_ScoreHelper', PACKAGE = 'SeuratSales', snn, query_pca, query_dists, corrected_nns, k_snn, subtract_first_nn, display_progress)
 }
 
 ComputeSNN <- function(nn_ranked, prune) {
-    .Call('_Seurat_ComputeSNN', PACKAGE = 'Seurat', nn_ranked, prune)
+    .Call('_SeuratSales_ComputeSNN', PACKAGE = 'SeuratSales', nn_ranked, prune)
 }
 
 WriteEdgeFile <- function(snn, filename, display_progress) {
-    invisible(.Call('_Seurat_WriteEdgeFile', PACKAGE = 'Seurat', snn, filename, display_progress))
+    invisible(.Call('_SeuratSales_WriteEdgeFile', PACKAGE = 'SeuratSales', snn, filename, display_progress))
 }
 
 DirectSNNToFile <- function(nn_ranked, prune, display_progress, filename) {
-    .Call('_Seurat_DirectSNNToFile', PACKAGE = 'Seurat', nn_ranked, prune, display_progress, filename)
+    .Call('_SeuratSales_DirectSNNToFile', PACKAGE = 'SeuratSales', nn_ranked, prune, display_progress, filename)
 }
 
 SNN_SmallestNonzero_Dist <- function(snn, mat, n, nearest_dist) {
-    .Call('_Seurat_SNN_SmallestNonzero_Dist', PACKAGE = 'Seurat', snn, mat, n, nearest_dist)
+    .Call('_SeuratSales_SNN_SmallestNonzero_Dist', PACKAGE = 'SeuratSales', snn, mat, n, nearest_dist)
 }
 
 row_sum_dgcmatrix <- function(x, i, rows, cols) {
-    .Call('_Seurat_row_sum_dgcmatrix', PACKAGE = 'Seurat', x, i, rows, cols)
+    .Call('_SeuratSales_row_sum_dgcmatrix', PACKAGE = 'SeuratSales', x, i, rows, cols)
 }
 
 row_mean_dgcmatrix <- function(x, i, rows, cols) {
-    .Call('_Seurat_row_mean_dgcmatrix', PACKAGE = 'Seurat', x, i, rows, cols)
+    .Call('_SeuratSales_row_mean_dgcmatrix', PACKAGE = 'SeuratSales', x, i, rows, cols)
 }
 
 row_var_dgcmatrix <- function(x, i, rows, cols) {
-    .Call('_Seurat_row_var_dgcmatrix', PACKAGE = 'Seurat', x, i, rows, cols)
+    .Call('_SeuratSales_row_var_dgcmatrix', PACKAGE = 'SeuratSales', x, i, rows, cols)
 }
 

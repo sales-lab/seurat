@@ -1,4 +1,4 @@
-Package: Seurat
+Package: SeuratSales
 Version: 4.3.0
 Date: 2022-11-18
 Title: Tools for Single Cell Genomics
@@ -98,7 +98,7 @@ Collate:
     'tree.R'
     'utilities.R'
     'zzz.R'
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 Encoding: UTF-8
 Suggests:
     ape,

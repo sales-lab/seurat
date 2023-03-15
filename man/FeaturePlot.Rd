@@ -113,7 +113,7 @@ different colors and different shapes on cells.  Only applicable if \code{raster
 \item{sort.cell}{Redundant with \code{order}. This argument is being
 deprecated. Please use \code{order} instead.}
 
-\item{interactive}{Launch an interactive \code{\link[Seurat:IFeaturePlot]{FeaturePlot}}}
+\item{interactive}{Launch an interactive \code{\link[SeuratSales:IFeaturePlot]{FeaturePlot}}}
 
 \item{combine}{Combine plots into a single \code{\link[patchwork]{patchwork}ed}
 ggplot object. If \code{FALSE}, return a list of ggplot objects}

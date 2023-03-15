@@ -5,7 +5,7 @@
 #' @importFrom methods setClass setOldClass setClassUnion slot
 #' slot<- setMethod new signature slotNames is setAs setValidity .hasSlot
 #' @importClassesFrom Matrix dgCMatrix
-#' @useDynLib Seurat
+#' @useDynLib SeuratSales
 #'
 NULL
 
